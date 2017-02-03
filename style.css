@@ -1,0 +1,980 @@
+html {
+    color: #000;
+    background: #FFF;
+}
+
+@font-face {
+    font-family: 'TradeGothic';
+    src: url("font/tradegothicltstd-light-webfont.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "TradeGothic";
+    src: url("font/tradegothicltstd-bold-webfont.woff");
+    font-weight: bold;
+    font-style: bold;
+}
+body, html, #container.desktop {
+    width: 100%;
+    height: 100%;
+    font-family: "TradeGothic";
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#container.desktop {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #999999;
+}
+
+.desktop .component.app {
+    font-family: "TradeGothic";
+    position: relative;
+    width: 0%;
+    height: 100%;
+    background: white;
+    overflow: hidden;
+}
+
+.desktop .component.app .pages {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 70%;
+    background: #f2f2f2;
+}
+
+.desktop .component.app .page {
+    width: 100%;
+    height: 100%;
+}
+
+.desktop .component.header .title {
+    /*display: inline-block;*/
+    margin: 70px 0 0 0;
+    -webkit-transition: margin-left 0.5s, opacity 0.5s;
+    transition: margin-left 0.5s, opacity 0.5s;
+    opacity: 0;
+    font-size: 19px;
+}
+
+.desktop .component.header .title h1 {
+    color: black;
+}
+
+.desktop .component.header .title .developer {
+    color: #999999;
+    padding: 10px 0 0 0;
+}
+
+.desktop .component.header.animationIn .projects .left {
+    /*margin-left: 130px;
+    margin-top: -50px;*/
+    margin-left: 320px;
+    margin-top: 195px;
+    opacity: 1;
+}
+
+.desktop .component.header.animationIn .projects .left a {
+    margin: 0 40px;
+}
+
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    color: black;
+    padding: 5px 20px 5px 15px;
+    line-height: 210%;
+    letter-spacing: .3em;
+    font-size: 0.9375em; line-height:130%;
+}
+.hvr-float:active, .hvr-float:focus {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    color: black;
+}
+.hvr-float:hover{
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    color: red;
+}
+
+.desktop .component.header.animationIn .locale {
+    opacity: 1;
+}
+
+.desktop .component.header.animationOut .title {
+    opacity: 0;
+}
+
+.desktop .component.header.animationOut .projects .left, .desktop .component.header.animationOut .projects .right {
+    opacity: 0;
+}
+
+.desktop .component.header.animationOut .locale {
+    opacity: 0;
+}
+
+.desktop .component.projects {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.desktop .component.projects .left {
+    vertical-align: top;
+    display: inline-block;
+    margin: 70px 30px 0 30px;
+    opacity: 0;
+}
+
+.desktop .component.projects .left {
+    -webkit-transition: margin-left 0.5s, opacity 0.5s;
+    transition: margin-left 0.5s, opacity 0.5s;
+    /*-webkit-transition-delay: 0.50s;
+    transition-delay: 0.50s;*/
+    line-height: 210%;
+    letter-spacing: .4em;
+    font-size: 1.0.9375em; line-height:130%;
+    display: inline-block;
+}
+
+.desktop .component.projects .project {
+    position: relative;
+    padding: 5px 5px 5px 15px;
+    font-size: 19px;
+}
+
+.desktop .component.projects .project a {
+    cursor: pointer;
+    color: black;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
+.desktop .component.projects .project:after, .desktop .component.projects .project:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: -5px;
+    width: 10px;
+    height: 2px;
+    background: black;
+}
+
+.desktop .component.projects .project:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.desktop .component.projects .project:before {
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.desktop .component.projects .project .date {
+    margin: 0 0 0 10px;
+    font-size: 12px;
+    color: #bfbfbf;
+}
+
+.desktop .component.projects .project:hover:after {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.desktop .component.footer {
+    position: absolute;
+    bottom: 30px;
+    left: 100px;
+    opacity: 0;
+    -webkit-transition: left 0.5s, opacity 0.5s;
+    transition: left 0.5s, opacity 0.5s;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
+
+.desktop .component.footer a {
+    margin: 0 20px;
+    font-size: 14.5px;
+}
+
+.desktop .component.footer.animationIn {
+    left: -25px;
+    opacity: 1;
+}
+
+/*.desktop .component.footer .locale {
+    margin: 0 20px;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+}*/
+
+.desktop .component.footer .locale a {
+    opacity: 0.6;
+    margin: 0px;
+}
+
+.desktop .component.footer .locale a.current {
+    opacity: 1;
+}
+
+.desktop .component.footer .separator {
+    color: #999999;
+    margin: 0 2px;
+    opacity: 0.6;
+}
+
+.desktop .component.home {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+.desktop .component.home.animationIn .tw {
+    opacity: 1;
+}
+
+.tw {
+    opacity: 1;
+    position: absolute;
+    /*right: 65px;*/
+    left: 50px;
+    top: -160px;
+    /*cursor: pointer;*/
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    /*height: 10px;*/
+}
+
+.dekstop .component.home .tw .description {
+    padding: 0 20px;
+    display: inline-block;
+    vertical-align: middle;
+    /*height: 10px;*/
+}
+
+.description .designer {
+    margin-top: -30px;
+    letter-spacing: .25em;
+    font-size: .9em;
+}
+
+.desktop .component.home .project-list {
+    margin: 0 1px 0 1px;/*top right bottom left */
+    /*height: 100%; what is was before with the 3rds*/
+    height:70%;
+    position: relative;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+    z-index: 2;
+    list-style-type: none;
+}
+
+/* */
+/* Let's get this party started */
+/*::-webkit-scrollbar {
+    width: 8px;
+}*/
+
+/* Track */
+/*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}*/
+
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: black;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: black;
+}*/
+
+/* Strikethrough */
+/*
+.strikeI, .strikeM, .strikeP {
+    display: inline-block;
+    position: relative;
+}
+
+.strikeI:before, .strikeI:after, .strikeM:before, .strikeM::after, .strikeP:before, .strikeP::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1.1px;
+    top: 50%;
+    margin-top: -3px;
+    background: black;
+}
+
+.strikeI:before, .strikeM:before, .strikeP:before {
+    left: -2.5px;
+}
+
+.strikeI:after, .strikeM:after, .strikeP:after {
+    right: 2.5px;
+    background: black;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.strikeI:active:before, .strikeM:active:before, .strikeP:active:before {
+    background: black;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.strikeI:active:after, .strikeM:active:after, .strikeP:active:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+}*/
+/* end of strikethrough */
+
+/*popup menu */
+
+/*end popup */
+.desktop .component.project-item {
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    font-size: 30px;
+    background-size: cover;
+    background-position: center top;
+}
+
+.desktop .component.project-item .title {
+    opacity: 0;
+    /*-webkit-transition: opacity 0.30s;
+    transition: opacity 0.30s;*/
+    /*-webkit-transition-delay: 0.10s;
+    transition-delay: 0.10s;*/
+}
+
+.desktop .component.project-item:hover {
+  /*-webkit-transform-origin: center bottom;*/
+    -webkit-transform: scale(1.02, 1.02);
+    /*transform-origin: center bottom;*/
+    transform: scale(1.02, 1.02);
+    opacity: 1;
+}
+
+.desktop .component.project-item:nth-child(2n+1) {
+    height: calc(100% - 90px);/*calculates the height based on div */
+    right: 50%; /*moves it to the right */
+    background-image: url();
+    background-size: cover;
+    background-position: center top;
+    background-color: #5E5E5E;
+    z-index: 2;
+}
+
+.desktop .component.project-item:nth-child(2n+2) {
+    height: calc(100% - 90px);/*controls height */
+    right: 0%; /* moves to right */
+    background-image: url();
+    background-size: cover;
+    background-position: center top;
+    background-color: #5E5E5E;
+    z-index: 1;
+}
+
+/*.desktop .component.project-item:nth-child(2n+3) {
+    height: calc(66% - 90px);
+    right: 0%;
+    background-image: url();
+    background-size: cover;
+    background-position: center top;
+    background-color: #5E5E5E;
+    z-index: 1;
+}*/
+
+/*.desktop .component.project-item.animationOut {
+    padding: 45px 0 45px 0;
+    width: 0;
+    -webkit-tranistion-origin: bottom center;
+    -webkit-transition: padding 0.35s, width 0.35s, opacity 0.20s, -webkit-transform 0.25s;
+    transition: padding 0.35s, width 0.35s, opacity 0.20s, -webkit-transform 0.25s;
+    transition: padding 0.35s, width 0.35s, opacity 0.20s, transform 0.25s;
+    transition: padding 0.35s, width 0.35s, opacity 0.20s, transform 0.25s, -webkit-transform 0.25s;
+}*/
+
+/*.desktop .component.project-item.animationOut .title {
+    opacity: 0;
+    -webkit-transition-delay: 0;
+    transition-delay: 0;
+    -webkit-transition: opacity 0.20s;
+    transition: opacity 0.20s;
+}*/
+
+.desktop .component.project-item.animationIn {
+    padding: 50px 50px 40px 40px;
+    width: calc(100% / 2 - 90px);
+    -webkit-transition: padding 0.35s, width 0.35s, opacity 0.05s, -webkit-transform 0.25s;
+    transition: padding 0.35s, width 0.35s, opacity 0.05s, -webkit-transform 0.25s;
+    transition: padding 0.35s, width 0.35s, opacity 0.05s, transform 0.25s;
+    transition: padding 0.35s, width 0.35s, opacity 0.05s, transform 0.25s, -webkit-transform 0.25s;
+}
+
+.desktop .component.project-item.animationIn .title {
+  opacity: 1;
+  font-size: 0.9375em; line-height:130%;
+  letter-spacing: 5px;
+}
+
+.desktop .component.description {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.desktop .component.description.animationIn .left-block {
+    width: 50%;
+}
+
+.desktop .component.description.animationIn .left-block .url {
+    opacity: 1;
+}
+
+.desktop .component.description.animationIn .right-block {
+    opacity: 1;
+}
+
+.desktop .component.description.animationIn .close {
+    opacity: 1;
+}
+
+.desktop .component.description.animationOut .left-block {
+    width: 0;
+}
+
+.desktop .component.description.animationOut .left-block .url {
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.desktop .component.description.animationOut .right-block {
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.desktop .component.description.animationOut .close {
+    opacity: 0;
+}
+
+.desktop .component.description .close {
+    position: absolute;
+    top: -60px;
+    right: 50px;
+    padding: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.desktop .component.description .close img {
+    width: 12px;
+}
+
+.desktop .component.description .left-block, .desktop .component.description .right-block {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.desktop .component.description .left-block {
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 50%;
+    z-index: 2;
+    text-align: center;
+    -webkit-transition: width 0.35s;
+    transition: width 0.35s;
+    overflow: hidden;
+}
+
+.desktop .component.description .left-block .imageDescription {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+/*.desktop .component.description .left-block .imageDescription.scaleUp {
+    -webkit-transition: none;
+    transition: none;
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}*/
+
+.desktop .component.description .left-block .imageDescription.scaleDown {
+    /*opacity: 1;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: transform 0.35s, opacity 0.35s;
+    transition: transform 0.35s, opacity 0.35s, -webkit-transform 0.35s;
+    -webkit-transform: scale(1);
+    transform: scale(1);*/
+}
+
+.desktop .component.description .left-block .percent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    height: 5px;
+    background: white;
+    z-index: 10;
+}
+
+.desktop .component.description .left-block .url {
+    display: inline-block;
+    top: 20%;
+    left: 0;
+    font-size: 25px;
+    opacity: 0;
+    -webkit-transition: 0.1s opacity;
+    transition: 0.1s opacity;
+    /*-webkit-transition-delay: 0.35s;
+    transition-delay: 0.35s;*/
+    color: white;
+    padding: 4px 0;
+}
+
+.desktop .component.description .right-block::-webkit-scrollbar {
+    display: none;
+}
+
+.desktop .component.description .right-block h2 {
+    font-size: 72px;
+    margin: 70px 0 60px 0;
+}
+
+.desktop .component.description .right-block .keys {
+    margin: 0 0 40px 0;
+    line-height: 29px;
+    font-size: 13.5px;
+}
+
+.desktop .component.description .right-block .keys .key {
+    margin: 0 0 10px 0;
+}
+
+.desktop .component.description .right-block .right-column, .desktop .component.description .right-block .left-column {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.desktop .component.description .right-block .left-column {
+    width: calc(23% - 15px);
+    margin: 0 15px 0 0;
+}
+
+.desktop .component.description .right-block .right-column {
+    width: calc(70% - 15px);
+    margin: 0 0 0 15px;
+    word-break: break-word;
+}
+
+.desktop .component.description .right-block .description {
+    margin: 0 0 40px 0;
+    font-size: 17px;
+    line-height: 26.5px;
+}
+
+.desktop .component.description .right-block .credits {
+    margin: 0 0 50px 0;
+    color: #bfbfbf;
+}
+
+.desktop .component.description .right-block .person {
+    display: block;
+}
+
+.desktop .component.description .right-block .url {
+    display: inline-block;
+    margin: 0 0 70px 0;
+    font-size: 25px;
+    padding: 4px 0;
+}
+.w3-modal {
+    z-index: 3;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.w3-modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+.w3-closebtn {
+    text-decoration: none;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    color: #969696;
+    padding-top: 25px;
+    padding-right: 100px;
+}
+.x{
+  position: fixed;
+}
+
+@media (max-width:600px) {
+    .w3-modal-content {
+        margin: 0 10px;
+        width: auto!important
+    }
+    .w3-modal {
+        padding-top: 0px
+    }
+}
+
+@media (max-width:768px) {
+    .w3-modal-content {
+        width: 100%;
+    }
+    .w3-modal {
+        padding-top: 0px
+    }
+}
+
+@media (min-width:993px) {
+    .w3-modal-content {
+        width: 100%;
+    }
+}
+
+.w3-animate-opacity {
+    -webkit-animation: opac 0.6s;
+    animation: opac 0.6s
+}
+
+.w3-card-8 {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important
+}
+
+.w3-container:after, .w3-panel:after, .w3-row:after, .w3-row-padding:after, .w3-topnav:after, .w3-clear:after, .w3-btn-group:before, .w3-btn-group:after, .w3-btn-bar:before, .w3-btn-bar:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.w3-teal, .w3-hover-teal:hover {
+    color: black!important;
+    background-color: white!important
+}
+
+.container, .w3-accordion-content a, .w3-dropdown-content a, .w3-dropdown-click:hover, .w3-dropdown-hover:hover, .w3-opennav, .w3-closenav, .w3-closebtn, *[class*="w3-hover-"] {
+    -webkit-transition: background-color .25s, color .15s, box-shadow .25s, opacity 0.25s, filter 0.25s, border 0.15s;
+    transition: background-color .25s, color .15s, box-shadow .15s, opacity .25s, filter .25s, border .15s
+}
+
+.w3-container {
+    /*padding: 0.00.9375em 16px*/
+    height: 100%;
+    overflow: auto;
+    clear:both;
+}
+
+.content {
+    /*background-color: black;*/
+    width: 45%;
+    height: 100%;
+    background-image: url();
+    overflow: hidden;
+    /*profile picture goes here */
+}
+
+.books.content {
+    /*background-color: red;*/
+    width: 60%;
+    height: 100%;
+    background-image: url();
+    overflow-y: auto;
+    display:inline-block;
+    float: left;
+    /*padding: 5px 5px 5px 5px;*/
+    /*profile picture goes here */
+}
+
+.books.content img{
+  width:100%;
+}
+.about.content {
+    /*background-color: red;*/
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+    display:block;
+    float: left;
+    margin: auto;
+    /*padding: 5px 5px 5px 5px;*/
+    /*profile picture goes here */
+}
+.about.content img{
+  width:100%;
+  margin-top: 100px;
+}
+
+.right-side{
+    float: right;
+    width: 40%;
+    height: 100%;
+}
+
+.x:hover, .w3-closebtn:hover, .x:focus, .w3-closebtn:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer
+}
+.project-description{
+  margin-top: 200px;
+  margin-left: 10%;
+  margin-right: 30px;
+  /*height:80%;*/
+}
+.project-description h1{
+  font-weight: normal;
+  font-size: 2em;
+  letter-spacing: 7px;
+  color: red;
+}
+
+.project-description p{
+  font-family: TradeGothic;
+  font-size: 0.9375em; line-height:130%;
+  letter-spacing: .5px;
+  margin-right: 20%;.video-description
+}
+
+@-webkit-keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.nav {
+    display: inline-block;
+    float: right;
+    margin: -71px 20px 0 0;
+}
+
+.desktop .component.projects .project {
+    position: relative;
+    padding: 5px 5px 5px 15px;
+    font-size: 19px;
+}
+.desktop .EET.component.project-item.animationIn {
+    background-image: url(img/phone.png);
+    opacity:.8;
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+    z-index: 101;
+}
+.desktop .highs.component.project-item.animationIn {
+    background-image: url(img/backgroundmag.png);
+    opacity:.8;
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+    z-index: 101;
+}
+.desktop .books.component.project-item.animationIn {
+    background-image: url(img/background.png);
+    opacity:.8;
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+    z-index: 101;
+}
+.desktop .PSA.component.project-item.animationIn {
+    background-image: url(img/PSA.png);
+    opacity:.8;
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+    z-index: 100;
+}
+.desktop .city.component.project-item.animationIn {
+    background-image: url(img/citylife.png);
+    opacity:.8;
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+    z-index: 100;
+}
+.desktop .jobs.component.project-item.animationIn{
+  background-image: url(img/jobs3.png);
+  opacity:.8;
+  filter: grayscale(100%);
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+ & Safari 6+ */
+  z-index: 100;
+}
+
+.desktop .component.project-item.animationIn:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: all 0.3s 0.3s;
+    transition: all 0.3s 0.3s;
+    opacity:1;
+    -webkit-transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02);
+    z-index: 1000;
+}
+span.title{
+  color:red;
+}
+.video {
+    width: 75%;
+    height: 53%;
+    margin: 0 auto;
+    /*background-color:blue;*/
+    padding: 40px;
+    position: relative;
+}
+
+.video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: visible;
+  max-width: 100%;
+}
+
+.embed-container {
+    position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: visible;
+      max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.video-info {
+  position: absolute;
+      margin: 0 0px -100px 0px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+}
+.Vtitle{
+  font-size: 1.8em;
+  letter-spacing: 7px;
+  color: red;
+  position: absolute;
+  margin-top: -75px;
+}
+.video-description{
+  font-family: TradeGothic;
+  position: absolute;
+  margin: 0px 0px 17px 0px;
+  font-size: 0.9375em; line-height:130%;
+  bottom: -15%;
+  left: 0;
+  position: absolute;
+}
+.thumbnails{
+  width: 100%;
+  position:absolute;
+}
+.thumbnails p{
+  margin-bottom: 3px;
+  font-family: TradeGothic;
+  font-size: 0.9375em; line-height:130%;
+}
+.thumb-top{
+align-items: center;
+position: relative;
+}
+.thumb-top img{
+  width: 100%;
+}
+.thumb-bottom{
+  align-items: center;
+}
+.thumb-bottom img{
+  width:100%;
+}
+
+.comps{
+  padding-top: 40px;
+  width: 70%;
+  display: block;
+  margin: auto;
+}
